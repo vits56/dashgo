@@ -1,4 +1,5 @@
 import { Box, Button, Checkbox, Flex, Heading, Icon, Table, Tbody, Td, Th, Thead, Tr, Text, useBreakpointValue } from "@chakra-ui/react";
+import Link from "next/link";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 
 import { Header } from "../../components/Header";
@@ -22,15 +23,17 @@ export default function UserList() {
           <Flex mb="8" justifyContent="space-between" align="center">
             <Heading size="lg" fontWeight="normal">Usuários</Heading>
 
-            <Button
-              AS="a"
-              size="sm"
-              fontSize="sm"
-              colorScheme="pink"
-              leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-            >
-              Criar Novo Usuário
-            </Button>
+            <Link href="/users/create" passHref>
+              <Button
+                as="a"
+                size="sm"
+                fontSize="sm"
+                colorScheme="pink"
+                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+              >
+                Criar Novo Usuário
+              </Button>
+            </Link>
           </Flex>
 
           <Table colorScheme="whiteAlpha">
@@ -57,15 +60,7 @@ export default function UserList() {
                 </Td>
                 { isWideVersion && <Td>15 de janeiro de 2022</Td> }
                 <Td>
-                <Button
-                  AS="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="purple"
-                  leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                >
-                  Editar
-                </Button>
+
                 </Td>
               </Tr>
               <Tr>
@@ -80,15 +75,7 @@ export default function UserList() {
                 </Td>
                 { isWideVersion && <Td>15 de janeiro de 2022</Td>}
                 <Td>
-                <Button
-                  AS="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="purple"
-                  leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                >
-                  Editar
-                </Button>
+              
                 </Td>
               </Tr>
               <Tr>
@@ -103,15 +90,7 @@ export default function UserList() {
                 </Td>
                 { isWideVersion && <Td>15 de janeiro de 2022</Td>}
                 <Td>
-                <Button
-                  AS="a"
-                  size="sm"
-                  fontSize="sm"
-                  colorScheme="purple"
-                  leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-                >
-                  Editar
-                </Button>
+             
                 </Td>
               </Tr>
             </Tbody>
